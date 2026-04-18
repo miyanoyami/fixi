@@ -342,6 +342,37 @@ button {
   border-bottom: 1px solid var(--border);
 }
 
+.search-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+
+.search-tab {
+  flex: 1;
+  padding: 14px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-sub);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.search-tab:hover { color: var(--text); }
+.search-tab.active {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.search-empty {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  padding: 16px;
+  margin: 0;
+}
+
 /* ============================================================
    User list (search results)
    ============================================================ */

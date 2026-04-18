@@ -131,6 +131,24 @@ function formatAbsolute(date) {
 // RENDER HELPERS
 // ============================================================
 
+const AVATAR_COLORS = ['#4a90d9','#e06c75','#56b6c2','#98c379','#e5c07b','#c678dd','#d19a66','#61afef'];
+
+function avatarFallbackSvg(key) {
+  const color = AVATAR_COLORS[
+    key.split('').reduce((s, c) => s + c.charCodeAt(0), 0) % AVATAR_COLORS.length
+  ];
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+    <rect width="40" height="40" rx="20" fill="${color}"/>
+    <circle cx="20" cy="15" r="7" fill="rgba(255,255,255,0.85)"/>
+    <ellipse cx="20" cy="35" rx="12" ry="9" fill="rgba(255,255,255,0.85)"/>
+  </svg>`;
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
+function applyAvatarFallback(img, user) {
+  img.onerror = () => { img.src = avatarFallbackSvg(user.key); img.onerror = null; };
+}
+
 function avatarEl(user) {
   const el = document.createElement('div');
   el.className = 'avatar';
@@ -138,10 +156,7 @@ function avatarEl(user) {
   img.src = `data/${user.key}/icon.png`;
   img.alt = user.name;
   img.loading = 'lazy';
-  img.onerror = () => {
-    el.removeChild(img);
-    el.textContent = (user.name || '?')[0];
-  };
+  applyAvatarFallback(img, user);
   el.appendChild(img);
   return el;
 }
@@ -252,10 +267,7 @@ function renderProfileHeader(user) {
   const avImg = document.createElement('img');
   avImg.src = `data/${user.key}/icon.png`;
   avImg.alt = user.name;
-  avImg.onerror = () => {
-    av.removeChild(avImg);
-    av.textContent = (user.name || '?')[0];
-  };
+  applyAvatarFallback(avImg, user);
   av.appendChild(avImg);
   avatarWrap.appendChild(av);
 
@@ -368,7 +380,10 @@ async function showTimeline() {
   showView('timeline');
   const list = document.getElementById('timeline-list');
   list.innerHTML = '';
-  timelinePosts = getAllPosts().sort((a, b) => b.offset - a.offset);
+  timelinePosts = getAllPosts()
+    .filter(p => !p.replyTo)
+    .sort((a, b) => b.offset - a.offset)
+    .slice(0, 100);
   timelineOffset = 0;
   timelineLoading = false;
 
@@ -419,37 +434,102 @@ async function showThread(postId) {
   repliesList.appendChild(frag);
 }
 
+const SEARCH_PAGE_SIZE = 20;
+let searchUserItems = [];
+let searchPostItems = [];
+let searchUserOffset = 0;
+let searchPostOffset = 0;
+let searchUserObserver = null;
+let searchPostObserver = null;
+
+function loadMoreSearchUsers() {
+  const list = document.getElementById('search-user-results');
+  const page = searchUserItems.slice(searchUserOffset, searchUserOffset + SEARCH_PAGE_SIZE);
+  if (page.length === 0) return;
+  const oldSentinel = document.getElementById('search-user-sentinel');
+  if (oldSentinel) oldSentinel.remove();
+  const frag = document.createDocumentFragment();
+  for (const u of page) frag.appendChild(renderUserCard(u));
+  list.appendChild(frag);
+  searchUserOffset += page.length;
+  if (searchUserOffset < searchUserItems.length) {
+    const sentinel = document.createElement('div');
+    sentinel.id = 'search-user-sentinel';
+    list.appendChild(sentinel);
+    if (searchUserObserver) searchUserObserver.observe(sentinel);
+  }
+}
+
+function loadMoreSearchPosts() {
+  const list = document.getElementById('search-post-results');
+  const page = searchPostItems.slice(searchPostOffset, searchPostOffset + SEARCH_PAGE_SIZE);
+  if (page.length === 0) return;
+  const oldSentinel = document.getElementById('search-post-sentinel');
+  if (oldSentinel) oldSentinel.remove();
+  const frag = document.createDocumentFragment();
+  for (const p of page) frag.appendChild(renderPostCard(p));
+  list.appendChild(frag);
+  searchPostOffset += page.length;
+  if (searchPostOffset < searchPostItems.length) {
+    const sentinel = document.createElement('div');
+    sentinel.id = 'search-post-sentinel';
+    list.appendChild(sentinel);
+    if (searchPostObserver) searchPostObserver.observe(sentinel);
+  }
+}
+
 function showSearch(query) {
   showView('search');
   document.getElementById('search-results-title').textContent = `「${query}」の検索結果`;
 
   const q = query.toLowerCase();
-  const allUsers = Object.values(userCache);
-  const allPosts = getAllPosts();
 
   // User search
-  const matchedUsers = allUsers.filter(u =>
+  searchUserItems = Object.values(userCache).filter(u =>
     u.name.toLowerCase().includes(q) ||
     u.key.toLowerCase().includes(q) ||
     (u.bio || '').toLowerCase().includes(q)
   );
-
+  searchUserOffset = 0;
   const userList = document.getElementById('search-user-results');
   userList.innerHTML = '';
-  const uf = document.createDocumentFragment();
-  for (const u of matchedUsers) uf.appendChild(renderUserCard(u));
-  userList.appendChild(uf);
+  document.getElementById('search-user-empty').hidden = searchUserItems.length > 0;
+  if (searchUserObserver) searchUserObserver.disconnect();
+  searchUserObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) loadMoreSearchUsers();
+  }, { rootMargin: '200px' });
+  loadMoreSearchUsers();
 
-  // Post search (full scan)
-  const matchedPosts = allPosts
+  // Post search
+  searchPostItems = getAllPosts()
     .filter(p => p.body.toLowerCase().includes(q))
     .sort((a, b) => b.offset - a.offset);
-
+  searchPostOffset = 0;
   const postList = document.getElementById('search-post-results');
   postList.innerHTML = '';
-  const pf = document.createDocumentFragment();
-  for (const p of matchedPosts) pf.appendChild(renderPostCard(p));
-  postList.appendChild(pf);
+  document.getElementById('search-post-empty').hidden = searchPostItems.length > 0;
+  if (searchPostObserver) searchPostObserver.disconnect();
+  searchPostObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) loadMoreSearchPosts();
+  }, { rootMargin: '200px' });
+  loadMoreSearchPosts();
+
+  // Tab switching
+  const tabs = document.querySelectorAll('.search-tab');
+  tabs.forEach(tab => {
+    tab.onclick = () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const isUsers = tab.dataset.tab === 'users';
+      document.getElementById('search-tab-users').hidden = !isUsers;
+      document.getElementById('search-tab-posts').hidden = isUsers;
+    };
+  });
+  // Reset to users tab
+  tabs[0].classList.add('active');
+  tabs[1].classList.remove('active');
+  document.getElementById('search-tab-users').hidden = false;
+  document.getElementById('search-tab-posts').hidden = true;
 }
 
 function showError(msg) {

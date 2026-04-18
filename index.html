@@ -30,7 +30,7 @@
 
       <!-- Timeline view -->
       <section id="view-timeline" class="view" hidden>
-        <h2 class="view-title">タイムライン</h2>
+        <h2 class="view-title">おすすめポスト</h2>
         <div id="timeline-list" class="post-list"></div>
       </section>
 
@@ -50,8 +50,18 @@
       <!-- Search results view -->
       <section id="view-search" class="view" hidden>
         <h2 class="view-title" id="search-results-title">検索結果</h2>
-        <div id="search-user-results" class="user-list"></div>
-        <div id="search-post-results" class="post-list"></div>
+        <div class="search-tabs">
+          <button class="search-tab active" data-tab="users">ユーザー</button>
+          <button class="search-tab" data-tab="posts">投稿</button>
+        </div>
+        <div id="search-tab-users">
+          <div id="search-user-results" class="user-list"></div>
+          <p id="search-user-empty" class="search-empty" hidden>該当するユーザーはいません</p>
+        </div>
+        <div id="search-tab-posts" hidden>
+          <div id="search-post-results" class="post-list"></div>
+          <p id="search-post-empty" class="search-empty" hidden>該当する投稿はありません</p>
+        </div>
       </section>
 
       <!-- Loading / Error -->

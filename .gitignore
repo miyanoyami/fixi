@@ -1,0 +1,11 @@
+# IDE
+.idea/
+
+# Claude Code
+.claude/
+
+# ビルド成果物（別リポジトリで公開）
+dist/
+
+# macOS
+.DS_Store

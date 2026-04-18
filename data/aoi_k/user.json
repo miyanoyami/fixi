@@ -1,0 +1,880 @@
+{
+  "key": "aoi_k",
+  "name": "葵かなえ",
+  "bio": "小説と珈琲と雨の日が好き。最近何かがおかしい気がしている",
+  "createdOffset": -20401635,
+  "following": [
+    "misaki_t",
+    "hana_w",
+    "koharu_p",
+    "chiaki_l",
+    "shiori_b",
+    "fuuka_i",
+    "miu_h",
+    "hazuki_p",
+    "ame_a2",
+    "ren_o",
+    "sena_i",
+    "yume_h"
+  ],
+  "followers": [
+    "misaki_t",
+    "hana_w",
+    "koharu_p",
+    "chiaki_l",
+    "fuuka_i",
+    "miu_h",
+    "shiori_b",
+    "fumi_f",
+    "ame_a2"
+  ],
+  "posts": [
+    {
+      "id": "aoi_k_0000",
+      "body": "うーん、わかりすぎる✌️",
+      "offset": -57540570,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0001",
+      "body": "今日も一日がんばったよ",
+      "offset": -57239341,
+      "replyTo": "aoi_k_0000",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0002",
+      "body": "こわい",
+      "offset": -56853969,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0003",
+      "body": "よしやるかな",
+      "offset": -56522368,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0004",
+      "body": "何もしたくないな",
+      "offset": -55817650,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0005",
+      "body": "おはようございます",
+      "offset": -55107245,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0006",
+      "body": "え？",
+      "offset": -54673316,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0007",
+      "body": "眠すぎる",
+      "offset": -54310376,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0008",
+      "body": "うーん、うれしい",
+      "offset": -53600022,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0009",
+      "body": "ぼーっとしてる",
+      "offset": -53164500,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0010",
+      "body": "嘘でしょな✌️",
+      "offset": -52651738,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0011",
+      "body": "帰ったよ",
+      "offset": -52170443,
+      "replyTo": "aoi_k_0008",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0012",
+      "body": "それなな",
+      "offset": -51760538,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0013",
+      "body": "かわいすぎな",
+      "offset": -51256719,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0014",
+      "body": "雨だな✌️",
+      "offset": -50866627,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0015",
+      "body": "最高な",
+      "offset": -50563494,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0016",
+      "body": "さびしいな",
+      "offset": -49968499,
+      "replyTo": "aoi_k_0014",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0017",
+      "body": "ねな",
+      "offset": -49555479,
+      "replyTo": "aoi_k_0014",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0018",
+      "body": "帰宅な✌️",
+      "offset": -49089243,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0019",
+      "body": "疲れたよ✌️",
+      "offset": -48834488,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0020",
+      "body": "つらい…",
+      "offset": -48577858,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0021",
+      "body": "ちょっと休憩な",
+      "offset": -48096362,
+      "replyTo": "aoi_k_0013",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0022",
+      "body": "うーん、今日もがんばったよな",
+      "offset": -47682429,
+      "replyTo": "aoi_k_0008",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0023",
+      "body": "まじかな✌️",
+      "offset": -47124553,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0024",
+      "body": "はあな",
+      "offset": -46741332,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0025",
+      "body": "もう無理",
+      "offset": -46249224,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0026",
+      "body": "おはよ✌️",
+      "offset": -45678403,
+      "replyTo": "aoi_k_0003",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0027",
+      "body": "うーん、しんどい",
+      "offset": -45408084,
+      "replyTo": "aoi_k_0022",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0028",
+      "body": "たしかにな",
+      "offset": -45005712,
+      "replyTo": "aoi_k_0005",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0029",
+      "body": "うーん、ありがとうな✌️",
+      "offset": -44610375,
+      "replyTo": "aoi_k_0027",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0030",
+      "body": "んー",
+      "offset": -44296637,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0031",
+      "body": "うーん、むりな",
+      "offset": -43656501,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0032",
+      "body": "うーん、でしょな✌️",
+      "offset": -43363686,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0033",
+      "body": "うん",
+      "offset": -42855549,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0034",
+      "body": "だよね",
+      "offset": -42343722,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0035",
+      "body": "うーん、寝るな",
+      "offset": -42016586,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0036",
+      "body": "うーん、つら…",
+      "offset": -41346148,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0037",
+      "body": "こわすぎな",
+      "offset": -40773898,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0038",
+      "body": "うーん、おつかれな",
+      "offset": -40401324,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0039",
+      "body": "笑",
+      "offset": -39929808,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0040",
+      "body": "おやすみなさい",
+      "offset": -39586546,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0041",
+      "body": "がんばったよ",
+      "offset": -39028682,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0042",
+      "body": "あつい",
+      "offset": -38463361,
+      "replyTo": "aoi_k_0041",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0043",
+      "body": "あついなあな✌️",
+      "offset": -38089947,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0044",
+      "body": "ぼーっとしてたよな",
+      "offset": -37506460,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0045",
+      "body": "笑ったよ✌️",
+      "offset": -37160890,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0046",
+      "body": "散歩したよな",
+      "offset": -36885998,
+      "replyTo": "aoi_k_0019",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0047",
+      "body": "やばい眠いな",
+      "offset": -36453031,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0048",
+      "body": "うーん、え。嘘でしょ？",
+      "offset": -35817313,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0049",
+      "body": "はらへったよ",
+      "offset": -35308484,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0050",
+      "body": "うーん、今日なんもしてない",
+      "offset": -34696004,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0051",
+      "body": "ごはん食べたよ",
+      "offset": -34149056,
+      "replyTo": "aoi_k_0036",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0052",
+      "body": "楽しみ✌️",
+      "offset": -33498016,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0053",
+      "body": "たのしい",
+      "offset": -33204219,
+      "replyTo": "aoi_k_0039",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0054",
+      "body": "おはよう",
+      "offset": -32942577,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0055",
+      "body": "こわ",
+      "offset": -32593568,
+      "replyTo": "aoi_k_0047",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0056",
+      "body": "よしな✌️",
+      "offset": -32283557,
+      "replyTo": "aoi_k_0010",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0057",
+      "body": "うーん、びっくりしたよ",
+      "offset": -31964594,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0058",
+      "body": "うーん、だよねえ",
+      "offset": -31580169,
+      "replyTo": "aoi_k_0024",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0059",
+      "body": "嬉しい",
+      "offset": -30927668,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0060",
+      "body": "ゆっくりしてるな",
+      "offset": -30203417,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0061",
+      "body": "うーん、いいじゃん",
+      "offset": -29917946,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0062",
+      "body": "うーん、お疲れ様でしたよ",
+      "offset": -29241318,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0063",
+      "body": "いい天気だ",
+      "offset": -28538246,
+      "replyTo": "aoi_k_0057",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0064",
+      "body": "今日もお疲れ様でしたよ",
+      "offset": -28122884,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0065",
+      "body": "うーん",
+      "offset": -27669622,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0066",
+      "body": "え。",
+      "offset": -27307785,
+      "replyTo": "aoi_k_0011",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0067",
+      "body": "何もできなかったよな",
+      "offset": -26660079,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0068",
+      "body": "もうちょっとがんばるな✌️",
+      "offset": -26131543,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0069",
+      "body": "ふうな",
+      "offset": -25487414,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0070",
+      "body": "うーん、ただいま",
+      "offset": -24815964,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0071",
+      "body": "うーん、いいね",
+      "offset": -24403055,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0072",
+      "body": "最高すぎ",
+      "offset": -23961766,
+      "replyTo": "aoi_k_0031",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0073",
+      "body": "ほんとそれ",
+      "offset": -23357438,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0074",
+      "body": "かわいい",
+      "offset": -22978583,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0075",
+      "body": "無理",
+      "offset": -22265290,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0076",
+      "body": "でしょ？",
+      "offset": -21806060,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0077",
+      "body": "しんどな",
+      "offset": -21534714,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0078",
+      "body": "まじかー",
+      "offset": -20835317,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0079",
+      "body": "やばいな",
+      "offset": -20148440,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0080",
+      "body": "コーヒー飲みたいな",
+      "offset": -19533526,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0081",
+      "body": "うーん、楽しいな",
+      "offset": -18954371,
+      "replyTo": "aoi_k_0020",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0082",
+      "body": "えええ",
+      "offset": -18498229,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0083",
+      "body": "うーん、すき",
+      "offset": -17866381,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0084",
+      "body": "つかれたー",
+      "offset": -17173047,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0085",
+      "body": "うーん、寒い",
+      "offset": -16908373,
+      "replyTo": "aoi_k_0052",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0086",
+      "body": "うーん、楽しかったよ✌️",
+      "offset": -16541058,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0087",
+      "body": "うーん、ごはん食べてない✌️",
+      "offset": -15912522,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0088",
+      "body": "さいこう",
+      "offset": -15664758,
+      "replyTo": "aoi_k_0008",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0089",
+      "body": "そっかな✌️",
+      "offset": -15247636,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0090",
+      "body": "わろたよな",
+      "offset": -14593803,
+      "replyTo": "aoi_k_0071",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0091",
+      "body": "つかれたよな",
+      "offset": -14253639,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0092",
+      "body": "嘘でしょ？",
+      "offset": -13770132,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0093",
+      "body": "うーん、ビビったよ",
+      "offset": -13251221,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0094",
+      "body": "うそ…",
+      "offset": -12852855,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0095",
+      "body": "うーん、なるほどね",
+      "offset": -12299882,
+      "replyTo": "aoi_k_0009",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0096",
+      "body": "うーん、好きな",
+      "offset": -11926368,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0097",
+      "body": "うーん、でかけるな",
+      "offset": -11636185,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0098",
+      "body": "ねむたい",
+      "offset": -10985838,
+      "replyTo": "aoi_k_0026",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0099",
+      "body": "無理すぎ✌️",
+      "offset": -10664394,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0100",
+      "body": "なるほどな",
+      "offset": -10067738,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0101",
+      "body": "うーん、草",
+      "offset": -9565882,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0102",
+      "body": "たしかに…",
+      "offset": -9118655,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0103",
+      "body": "うーん、疲れた…",
+      "offset": -8529860,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0104",
+      "body": "寝ますな✌️",
+      "offset": -8249200,
+      "replyTo": "aoi_k_0010",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0105",
+      "body": "やばすぎるな✌️",
+      "offset": -7680292,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0106",
+      "body": "うーん、無理…",
+      "offset": -7323465,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0107",
+      "body": "雨降ってる",
+      "offset": -7070592,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0108",
+      "body": "帰ってきたよな",
+      "offset": -6656166,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0109",
+      "body": "うーん、散歩したくなってきたよ",
+      "offset": -6271017,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0110",
+      "body": "うーん、はー",
+      "offset": -6020951,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0111",
+      "body": "おやすみな",
+      "offset": -5375571,
+      "replyTo": "aoi_k_0040",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0112",
+      "body": "笑いすぎたよな",
+      "offset": -4909805,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0113",
+      "body": "えっな",
+      "offset": -4366696,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0114",
+      "body": "うーん、がんばる",
+      "offset": -3793448,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0115",
+      "body": "うーん、ゆっくりしたよ",
+      "offset": -3229115,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0116",
+      "body": "ビビった……。",
+      "offset": -2539623,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0117",
+      "body": "お腹すいたよ✌️",
+      "offset": -2068544,
+      "replyTo": "aoi_k_0102",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0118",
+      "body": "うーん、やばな",
+      "offset": -1602514,
+      "replyTo": "aoi_k_0002",
+      "media": null
+    },
+    {
+      "id": "aoi_k_0119",
+      "body": "腹減ったよ✌️",
+      "offset": -1241673,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "aoi_k_0120",
+      "body": "ここ好きだな",
+      "offset": -1291007,
+      "replyTo": null,
+      "media": "coffe_and_pizza_in_cafe.png"
+    }
+  ]
+}

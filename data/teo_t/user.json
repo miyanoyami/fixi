@@ -1,0 +1,364 @@
+{
+  "key": "teo_t",
+  "name": "てお",
+  "bio": "外来語みたいな名前だと言われる",
+  "createdOffset": -27104234,
+  "following": [
+    "asahi_u",
+    "hiro_h",
+    "jiro_j"
+  ],
+  "followers": [],
+  "posts": [
+    {
+      "id": "teo_t_0000",
+      "body": "まあぼーっとしてる",
+      "offset": -54214978,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0001",
+      "body": "もう無理！😅",
+      "offset": -52544048,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0002",
+      "body": "まあすき😅",
+      "offset": -51241686,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0003",
+      "body": "あつい",
+      "offset": -49627198,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0004",
+      "body": "え？",
+      "offset": -48713096,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0005",
+      "body": "雨だ",
+      "offset": -47544910,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0006",
+      "body": "はあ😅",
+      "offset": -46930532,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0007",
+      "body": "まあ帰ったよ😅",
+      "offset": -45456473,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0008",
+      "body": "さびしい！",
+      "offset": -44432932,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0009",
+      "body": "ねむい！",
+      "offset": -43064344,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0010",
+      "body": "えっ！",
+      "offset": -41655343,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0011",
+      "body": "まあ無理😅",
+      "offset": -40536815,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0012",
+      "body": "まあわかりすぎる！",
+      "offset": -39642899,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0013",
+      "body": "まあさみしい！",
+      "offset": -38078657,
+      "replyTo": "atsuki_v_0032",
+      "media": null
+    },
+    {
+      "id": "teo_t_0014",
+      "body": "まあ草",
+      "offset": -36749803,
+      "replyTo": "shion_v_0033",
+      "media": null
+    },
+    {
+      "id": "teo_t_0015",
+      "body": "そうか！",
+      "offset": -35828879,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0016",
+      "body": "ビビった……。",
+      "offset": -34790859,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0017",
+      "body": "つらい…",
+      "offset": -33606222,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0018",
+      "body": "かわいい！",
+      "offset": -32012824,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0019",
+      "body": "まあさむい",
+      "offset": -30404223,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0020",
+      "body": "つらい！",
+      "offset": -29727335,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0021",
+      "body": "でしょ",
+      "offset": -28852533,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0022",
+      "body": "びっくりしたよ！",
+      "offset": -28030877,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0023",
+      "body": "ね",
+      "offset": -27197687,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0024",
+      "body": "たのしい！",
+      "offset": -25603713,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0025",
+      "body": "まじかー",
+      "offset": -24014028,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0026",
+      "body": "何もできなかったよ",
+      "offset": -22645243,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0027",
+      "body": "いってきます！",
+      "offset": -21141567,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0028",
+      "body": "がんばったよ",
+      "offset": -20424719,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0029",
+      "body": "がんばる",
+      "offset": -19840109,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0030",
+      "body": "それな！",
+      "offset": -18803198,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0031",
+      "body": "まあうそ…😅",
+      "offset": -17899276,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0032",
+      "body": "散歩してる",
+      "offset": -16743853,
+      "replyTo": "kotone_m_0091",
+      "media": null
+    },
+    {
+      "id": "teo_t_0033",
+      "body": "まあゆっくりしてる",
+      "offset": -15900749,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0034",
+      "body": "まあ腹減ったよ！😅",
+      "offset": -14770283,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0035",
+      "body": "まあうそ",
+      "offset": -13113362,
+      "replyTo": "chiaki_l_0014",
+      "media": null
+    },
+    {
+      "id": "teo_t_0036",
+      "body": "ちょっと休憩！",
+      "offset": -12539005,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0037",
+      "body": "おつかれ",
+      "offset": -11734325,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0038",
+      "body": "疲れたよ",
+      "offset": -10211104,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0039",
+      "body": "まあさいこう",
+      "offset": -9000230,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0040",
+      "body": "しんどい！",
+      "offset": -7682004,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0041",
+      "body": "びっくりした……😅",
+      "offset": -6577506,
+      "replyTo": "tsugumi_o_0065",
+      "media": null
+    },
+    {
+      "id": "teo_t_0042",
+      "body": "つかれたー",
+      "offset": -5214293,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0043",
+      "body": "笑ったよ！",
+      "offset": -4235737,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0044",
+      "body": "いい天気😅",
+      "offset": -2726636,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0045",
+      "body": "まあだよねえ",
+      "offset": -1951750,
+      "replyTo": "haruki_s_0026",
+      "media": null
+    },
+    {
+      "id": "teo_t_0046",
+      "body": "まあだよね！",
+      "offset": -1118215,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0047",
+      "body": "まあゆっくりする😅",
+      "offset": -152279,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0048",
+      "body": "寝ます",
+      "offset": -2944,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "teo_t_0049",
+      "body": "やば😅",
+      "offset": -4237,
+      "replyTo": null,
+      "media": null
+    }
+  ]
+}

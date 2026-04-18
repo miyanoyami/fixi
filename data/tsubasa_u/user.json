@@ -1,0 +1,335 @@
+{
+  "key": "tsubasa_u",
+  "name": "つばさ",
+  "bio": "飛べない夢を繰り返し見る",
+  "createdOffset": -5943194,
+  "following": [
+    "kei_n",
+    "yume_h"
+  ],
+  "followers": [
+    "kei_n",
+    "rei_m",
+    "nagi_g",
+    "hikaru_t",
+    "yume_h",
+    "sui_s"
+  ],
+  "posts": [
+    {
+      "id": "tsubasa_u_0000",
+      "body": "でも始まってる",
+      "offset": -58788430,
+      "replyTo": "yuito_n_0003",
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0001",
+      "body": "急いだほうがいい。",
+      "offset": -57312948,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0002",
+      "body": "消えてる。",
+      "offset": -56079363,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0003",
+      "body": "知らなければよかったよ",
+      "offset": -54727803,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0004",
+      "body": "知ってしまったよ。",
+      "offset": -53792730,
+      "replyTo": "kei_n_0018",
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0005",
+      "body": "でも最後かもしれない。",
+      "offset": -52264313,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0006",
+      "body": "でもやっとわかったよ。",
+      "offset": -51414242,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0007",
+      "body": "もう遅い",
+      "offset": -50329889,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0008",
+      "body": "覚えておいてほしい。",
+      "offset": -48650777,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0009",
+      "body": "見つけたよ",
+      "offset": -47398544,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0010",
+      "body": "また来たよ",
+      "offset": -46530845,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0011",
+      "body": "また来てる。",
+      "offset": -44539852,
+      "replyTo": "isamu_r_0073",
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0012",
+      "body": "やっぱりそうだったよ",
+      "offset": -42982798,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0013",
+      "body": "終わりに近づいてる",
+      "offset": -41271836,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0014",
+      "body": "でも聞いた気がする",
+      "offset": -39687706,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0015",
+      "body": "気のせいじゃなかったよ。",
+      "offset": -38466096,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0016",
+      "body": "どこかで見たよ。",
+      "offset": -37681088,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0017",
+      "body": "終わる。",
+      "offset": -36954275,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0018",
+      "body": "なんで。",
+      "offset": -35286191,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0019",
+      "body": "でも始まったよ。",
+      "offset": -34567161,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0020",
+      "body": "気づいたよ。",
+      "offset": -32598214,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0021",
+      "body": "わすれないようにしないと。",
+      "offset": -31265583,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0022",
+      "body": "そういうことか。",
+      "offset": -30500023,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0023",
+      "body": "でもなんでだろう",
+      "offset": -29378722,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0024",
+      "body": "メモしておく",
+      "offset": -27387957,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0025",
+      "body": "消してしまったよ",
+      "offset": -26582569,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0026",
+      "body": "もう終わる",
+      "offset": -25247372,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0027",
+      "body": "残しておく。",
+      "offset": -24202838,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0028",
+      "body": "なんで？",
+      "offset": -22577164,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0029",
+      "body": "同じだ",
+      "offset": -21392567,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0030",
+      "body": "もう決めたよ。",
+      "offset": -19572028,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0031",
+      "body": "記録しておく",
+      "offset": -17828195,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0032",
+      "body": "でも決めたよ",
+      "offset": -15834634,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0033",
+      "body": "間に合う？",
+      "offset": -14507612,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0034",
+      "body": "でも何かいたよ。",
+      "offset": -13535255,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0035",
+      "body": "見つけてしまったよ",
+      "offset": -12222993,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0036",
+      "body": "でも絶対偶然じゃない",
+      "offset": -10621378,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0037",
+      "body": "でももう始まってる",
+      "offset": -9474919,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0038",
+      "body": "でもそういうことだったのか",
+      "offset": -7854748,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0039",
+      "body": "でも気づいてた人いる？",
+      "offset": -6744172,
+      "replyTo": "chiho_a_0072",
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0040",
+      "body": "ずっと待ってたよ",
+      "offset": -4777760,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0041",
+      "body": "でも見てはいけなかったかもしれない。",
+      "offset": -3306790,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0042",
+      "body": "でも知ってよかったよ。",
+      "offset": -2544030,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0043",
+      "body": "忘れないうちに。",
+      "offset": -1722372,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "tsubasa_u_0044",
+      "body": "また繰り返してる",
+      "offset": -4859,
+      "replyTo": null,
+      "media": null
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+name: 投稿を追加する
+
+on:
+  workflow_dispatch:
+    inputs:
+      key:
+        description: 'ユーザーキー（既存のユーザーであること）'
+        required: true
+      count:
+        description: '追加する投稿数'
+        required: true
+        default: '20'
+      category:
+        description: 'パターンカテゴリ（daily / rumor / reaction / cryptic / 空白=全て）'
+        required: false
+        default: ''
+      reply_rate:
+        description: '返信率（0.0〜1.0、デフォルト0.2）'
+        required: false
+        default: '0.2'
+
+jobs:
+  add-posts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 投稿を追加
+        run: |
+          ARGS="--key ${{ github.event.inputs.key }} --count ${{ github.event.inputs.count }} --reply-rate ${{ github.event.inputs.reply_rate }}"
+          if [ -n "${{ github.event.inputs.category }}" ]; then
+            ARGS="$ARGS --category ${{ github.event.inputs.category }}"
+          fi
+          node generator/scripts.js add-posts $ARGS
+
+      - name: コミット & プッシュ
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git commit -m "Add posts: ${{ github.event.inputs.key }} (+${{ github.event.inputs.count }})" || echo "No changes to commit"
+          git push

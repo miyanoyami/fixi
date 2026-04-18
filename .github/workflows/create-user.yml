@@ -1,0 +1,42 @@
+name: ユーザーを作成する
+
+on:
+  workflow_dispatch:
+    inputs:
+      key:
+        description: 'ユーザーキー（フォルダ名・英数字とハイフンのみ）'
+        required: true
+      name:
+        description: '表示名'
+        required: true
+      bio:
+        description: 'プロフィール文（省略可）'
+        required: false
+        default: ''
+
+jobs:
+  create-user:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: ユーザーを作成
+        run: |
+          node generator/scripts.js create-user \
+            --key "${{ github.event.inputs.key }}" \
+            --name "${{ github.event.inputs.name }}" \
+            --bio "${{ github.event.inputs.bio }}"
+
+      - name: コミット & プッシュ
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git commit -m "Add user: ${{ github.event.inputs.key }}" || echo "No changes to commit"
+          git push

@@ -1,0 +1,656 @@
+{
+  "key": "riko_a",
+  "name": "riko",
+  "bio": "転勤族。どこに行っても馴染めない",
+  "createdOffset": -4485178,
+  "following": [
+    "kotone_m",
+    "yua_t",
+    "miu_h",
+    "karen_s",
+    "akira_y",
+    "noa_c",
+    "toma_j",
+    "nagi_g"
+  ],
+  "followers": [
+    "miu_h",
+    "karen_s",
+    "haruki_s",
+    "kotone_m",
+    "yua_t",
+    "noa_c"
+  ],
+  "posts": [
+    {
+      "id": "riko_a_0000",
+      "body": "おかしくない？",
+      "offset": -62435914,
+      "replyTo": "miu_h_0056",
+      "media": null
+    },
+    {
+      "id": "riko_a_0001",
+      "body": "まああやしい",
+      "offset": -61905952,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0002",
+      "body": "怪しくない？",
+      "offset": -61411739,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0003",
+      "body": "あの話どうなった",
+      "offset": -60940883,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0004",
+      "body": "まあらしい🙄",
+      "offset": -60455612,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0005",
+      "body": "まあ誰か知ってる？",
+      "offset": -59739595,
+      "replyTo": "fuuka_i_0024",
+      "media": null
+    },
+    {
+      "id": "riko_a_0006",
+      "body": "まあ教えてくれない",
+      "offset": -58984228,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0007",
+      "body": "ずっと気になってる。",
+      "offset": -58303013,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0008",
+      "body": "絶対何かある。",
+      "offset": -57787843,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0009",
+      "body": "なんで急に黙ったの",
+      "offset": -57123146,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0010",
+      "body": "最近見ない",
+      "offset": -56513647,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0011",
+      "body": "まあえ、これ知らなかった",
+      "offset": -55919218,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0012",
+      "body": "消えた？",
+      "offset": -54929859,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0013",
+      "body": "なんで誰も言わないの",
+      "offset": -54258034,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0014",
+      "body": "何があったんだろ",
+      "offset": -53373060,
+      "replyTo": "daiki_f_0100",
+      "media": null
+    },
+    {
+      "id": "riko_a_0015",
+      "body": "まあ大丈夫なのかな",
+      "offset": -52466290,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0016",
+      "body": "これ絶対偶然じゃない",
+      "offset": -51659638,
+      "replyTo": "miu_h_0027",
+      "media": null
+    },
+    {
+      "id": "riko_a_0017",
+      "body": "本当かどうかわからないけど。",
+      "offset": -50641184,
+      "replyTo": "aoi_k_0019",
+      "media": null
+    },
+    {
+      "id": "riko_a_0018",
+      "body": "偶然にしてはできすぎてる",
+      "offset": -50032852,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0019",
+      "body": "まあ絶対隠してる",
+      "offset": -49575901,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0020",
+      "body": "急に静かになった。",
+      "offset": -48612105,
+      "replyTo": "souma_k_0059",
+      "media": null
+    },
+    {
+      "id": "riko_a_0021",
+      "body": "まあ連絡取れなくなった。",
+      "offset": -47721293,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0022",
+      "body": "大丈夫？",
+      "offset": -47085112,
+      "replyTo": "koharu_p_0086",
+      "media": null
+    },
+    {
+      "id": "riko_a_0023",
+      "body": "どこ行ったんだろ🙄",
+      "offset": -46446191,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0024",
+      "body": "なんか気になる",
+      "offset": -46079468,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0025",
+      "body": "気になってる。🙄",
+      "offset": -45710801,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0026",
+      "body": "なんか変じゃない？",
+      "offset": -44934881,
+      "replyTo": "chiaki_l_0008",
+      "media": null
+    },
+    {
+      "id": "riko_a_0027",
+      "body": "まあまた繰り返してる。",
+      "offset": -44091678,
+      "replyTo": "nana_s_0127",
+      "media": null
+    },
+    {
+      "id": "riko_a_0028",
+      "body": "聞いた話なんだけど",
+      "offset": -43627123,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0029",
+      "body": "らしいよ。🙄",
+      "offset": -43073046,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0030",
+      "body": "急に消えた",
+      "offset": -42125162,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0031",
+      "body": "また同じパターン",
+      "offset": -41280622,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0032",
+      "body": "なんか変",
+      "offset": -40921997,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0033",
+      "body": "ほんとに？",
+      "offset": -39885515,
+      "replyTo": "tsugumi_o_0044",
+      "media": null
+    },
+    {
+      "id": "riko_a_0034",
+      "body": "前にも同じことあったよね",
+      "offset": -39333096,
+      "replyTo": "chiaki_l_0062",
+      "media": null
+    },
+    {
+      "id": "riko_a_0035",
+      "body": "まあ何かあった？🙄",
+      "offset": -38518975,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0036",
+      "body": "まあ静かすぎて逆に怖い",
+      "offset": -38093878,
+      "replyTo": "souma_k_0052",
+      "media": null
+    },
+    {
+      "id": "riko_a_0037",
+      "body": "何かある気がする🙄",
+      "offset": -37545878,
+      "replyTo": "miu_h_0037",
+      "media": null
+    },
+    {
+      "id": "riko_a_0038",
+      "body": "って言ってた",
+      "offset": -36898129,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0039",
+      "body": "まあ確実に何かある🙄",
+      "offset": -35965005,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0040",
+      "body": "まああやしすぎる🙄",
+      "offset": -35284454,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0041",
+      "body": "って聞いた。",
+      "offset": -34459465,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0042",
+      "body": "ほんとかな",
+      "offset": -33738990,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0043",
+      "body": "まあなんで今さら",
+      "offset": -33177086,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0044",
+      "body": "まああ、そういうことか。",
+      "offset": -32386945,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0045",
+      "body": "まあ隠してる？",
+      "offset": -31600283,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0046",
+      "body": "ちょっと待って、これ変じゃない？",
+      "offset": -30847811,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0047",
+      "body": "信じていいのかわからない。🙄",
+      "offset": -30017365,
+      "replyTo": "fuuka_i_0078",
+      "media": null
+    },
+    {
+      "id": "riko_a_0048",
+      "body": "偶然とは思えない",
+      "offset": -29099745,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0049",
+      "body": "まあ続報まだ？",
+      "offset": -28667807,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0050",
+      "body": "まあこれ知ってた？",
+      "offset": -28080491,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0051",
+      "body": "あれどうなったんだろ。",
+      "offset": -27444379,
+      "replyTo": "chiaki_l_0052",
+      "media": null
+    },
+    {
+      "id": "riko_a_0052",
+      "body": "今さら？🙄",
+      "offset": -26499939,
+      "replyTo": "daiki_f_0099",
+      "media": null
+    },
+    {
+      "id": "riko_a_0053",
+      "body": "静かすぎない？",
+      "offset": -26007750,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0054",
+      "body": "まあ知ってる人いる？",
+      "offset": -25065419,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0055",
+      "body": "まあ知ってて言わないんでしょ。",
+      "offset": -24223705,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0056",
+      "body": "聞いたんだけど。🙄",
+      "offset": -23829220,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0057",
+      "body": "何も言ってくれない",
+      "offset": -23108011,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0058",
+      "body": "なんで教えてくれないんだろ。",
+      "offset": -22321339,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0059",
+      "body": "見かけなくなった",
+      "offset": -21354086,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0060",
+      "body": "おかしくない？",
+      "offset": -20682557,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0061",
+      "body": "あやしい。",
+      "offset": -20262262,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0062",
+      "body": "怪しくない？",
+      "offset": -19324249,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0063",
+      "body": "あの話どうなった",
+      "offset": -18582444,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0064",
+      "body": "らしい。",
+      "offset": -17699670,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0065",
+      "body": "まあ誰か知ってる？",
+      "offset": -16761475,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0066",
+      "body": "教えてくれない",
+      "offset": -16134340,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0067",
+      "body": "ずっと気になってる",
+      "offset": -15690470,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0068",
+      "body": "絶対何かある。",
+      "offset": -15193275,
+      "replyTo": "misaki_t_0067",
+      "media": null
+    },
+    {
+      "id": "riko_a_0069",
+      "body": "まあなんで急に黙ったの🙄",
+      "offset": -14600226,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0070",
+      "body": "最近見ない。",
+      "offset": -13865173,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0071",
+      "body": "まあえ、これ知らなかった。",
+      "offset": -13430121,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0072",
+      "body": "消えた？",
+      "offset": -12779368,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0073",
+      "body": "なんで誰も言わないの。",
+      "offset": -12156254,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0074",
+      "body": "何があったんだろ🙄",
+      "offset": -11317395,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0075",
+      "body": "大丈夫なのかな",
+      "offset": -10327208,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0076",
+      "body": "まあこれ絶対偶然じゃない。",
+      "offset": -9339432,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0077",
+      "body": "本当かどうかわからないけど。",
+      "offset": -8979602,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0078",
+      "body": "偶然にしてはできすぎてる",
+      "offset": -8014077,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0079",
+      "body": "絶対隠してる",
+      "offset": -7013384,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0080",
+      "body": "急に静かになった",
+      "offset": -6474413,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0081",
+      "body": "連絡取れなくなった",
+      "offset": -5621450,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0082",
+      "body": "大丈夫？",
+      "offset": -4721536,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0083",
+      "body": "どこ行ったんだろ。",
+      "offset": -3676034,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0084",
+      "body": "なんか気になる。",
+      "offset": -3055347,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0085",
+      "body": "まあ気になってる",
+      "offset": -2067929,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0086",
+      "body": "なんか変じゃない？",
+      "offset": -1205323,
+      "replyTo": "miu_h_0096",
+      "media": null
+    },
+    {
+      "id": "riko_a_0087",
+      "body": "また繰り返してる",
+      "offset": -308819,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0088",
+      "body": "まあ聞いた話なんだけど。",
+      "offset": -1518,
+      "replyTo": null,
+      "media": null
+    },
+    {
+      "id": "riko_a_0089",
+      "body": "らしいよ🙄",
+      "offset": -4592,
+      "replyTo": "haruki_s_0004",
+      "media": null
+    }
+  ]
+}

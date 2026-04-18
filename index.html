@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nisetter</title>
+  <link rel="stylesheet" href="viewer/style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- Header -->
+    <header id="header">
+      <div class="header-inner">
+        <a href="#timeline" class="site-name" id="site-name">SNS</a>
+        <div class="header-actions">
+          <button class="icon-btn" id="search-toggle-btn" aria-label="検索">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+      </div>
+      <!-- Search bar (hidden by default) -->
+      <div class="search-bar" id="search-bar" hidden>
+        <input type="search" id="search-input" placeholder="投稿・ユーザーを検索…" autocomplete="off">
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main id="main">
+
+      <!-- Timeline view -->
+      <section id="view-timeline" class="view" hidden>
+        <h2 class="view-title">タイムライン</h2>
+        <div id="timeline-list" class="post-list"></div>
+      </section>
+
+      <!-- Profile view -->
+      <section id="view-profile" class="view" hidden>
+        <div id="profile-header" class="profile-header"></div>
+        <div id="profile-posts" class="post-list"></div>
+      </section>
+
+      <!-- Thread view (single post + replies) -->
+      <section id="view-thread" class="view" hidden>
+        <div id="thread-root" class="post-list"></div>
+        <h3 class="replies-label">返信</h3>
+        <div id="thread-replies" class="post-list"></div>
+      </section>
+
+      <!-- Search results view -->
+      <section id="view-search" class="view" hidden>
+        <h2 class="view-title" id="search-results-title">検索結果</h2>
+        <div id="search-user-results" class="user-list"></div>
+        <div id="search-post-results" class="post-list"></div>
+      </section>
+
+      <!-- Loading / Error -->
+      <div id="view-loading" class="view status-view">
+        <div class="spinner"></div>
+        <p>読み込み中…</p>
+      </div>
+
+      <div id="view-error" class="view status-view" hidden>
+        <p class="error-msg" id="error-msg">エラーが発生しました</p>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="viewer/viewer.js"></script>
+</body>
+</html>

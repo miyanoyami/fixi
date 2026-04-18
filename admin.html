@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nisetter — 管理ツール</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f0f;
+      --bg-card: #1a1a1a;
+      --bg-input: #111;
+      --border: #2a2a2a;
+      --border-focus: #4a9eff;
+      --text: #e7e9ea;
+      --text-sub: #71767b;
+      --accent: #1d9bf0;
+      --accent-hover: #1a8cd8;
+      --danger: #f4212e;
+      --success: #00ba7c;
+      --radius: 8px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 32px 16px 80px;
+      font-size: 14px;
+    }
+
+    h1 { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
+    .subtitle { color: var(--text-sub); font-size: 0.85rem; margin-bottom: 24px; }
+
+    .container { max-width: 760px; margin: 0 auto; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-sub);
+      cursor: pointer;
+      font-family: var(--font);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      margin-bottom: -1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Section */
+    .section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-sub);
+      margin-bottom: 14px;
+    }
+
+    /* Form fields */
+    .field { margin-bottom: 14px; }
+    .field:last-child { margin-bottom: 0; }
+    label { display: block; font-size: 0.82rem; color: var(--text-sub); margin-bottom: 5px; }
+    label span.required { color: var(--accent); margin-left: 2px; }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="datetime-local"],
+    textarea,
+    select {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.9rem;
+      padding: 8px 10px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--border-focus); }
+    textarea { resize: vertical; min-height: 72px; }
+
+    .row { display: flex; gap: 12px; }
+    .row .field { flex: 1; }
+
+    /* Radio group */
+    .radio-group { display: flex; gap: 16px; flex-wrap: wrap; }
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    .radio-label input[type="radio"] { accent-color: var(--accent); width: auto; }
+
+    /* Follow input */
+    .tag-input-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 6px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-input);
+      min-height: 40px;
+      cursor: text;
+    }
+    .tag-input-wrap:focus-within { border-color: var(--border-focus); }
+    .tag {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--border);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.82rem;
+    }
+    .tag button {
+      background: none; border: none; color: var(--text-sub);
+      cursor: pointer; font-size: 0.9rem; line-height: 1; padding: 0;
+    }
+    .tag button:hover { color: var(--danger); }
+    .tag-input {
+      background: none; border: none; outline: none;
+      color: var(--text); font-size: 0.88rem; min-width: 80px; flex: 1;
+      padding: 2px 4px;
+    }
+
+    /* Post list */
+    .post-item {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 8px;
+      background: var(--bg-input);
+      position: relative;
+    }
+    .post-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .post-item-body { font-size: 0.9rem; word-break: break-word; white-space: pre-wrap; }
+    .post-item-meta { font-size: 0.78rem; color: var(--text-sub); margin-top: 4px; }
+    .post-item-delete {
+      background: none; border: none; color: var(--text-sub);
+      cursor: pointer; font-size: 1rem; flex-shrink: 0;
+      padding: 0 2px;
+    }
+    .post-item-delete:hover { color: var(--danger); }
+
+    /* Add post form */
+    .add-post-form {
+      border: 1px dashed var(--border);
+      border-radius: 6px;
+      padding: 14px;
+      margin-top: 10px;
+    }
+    .add-post-form .row { align-items: flex-end; }
+
+    /* Date mode notice */
+    .date-hint {
+      font-size: 0.78rem;
+      color: var(--text-sub);
+      background: rgba(29,155,240,0.08);
+      border: 1px solid rgba(29,155,240,0.2);
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+    .date-hint strong { color: var(--accent); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: var(--font);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      transition: background 0.15s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-secondary { background: var(--border); color: var(--text); }
+    .btn-secondary:hover { background: #3a3a3a; }
+    .btn-sm { padding: 5px 10px; font-size: 0.82rem; }
+
+    /* Output */
+    .output-section { display: none; }
+    .output-section.visible { display: block; }
+    .json-output {
+      background: #0a0a0a;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px;
+      font-family: 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      white-space: pre;
+      color: #b5cea8;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .output-actions { display: flex; gap: 8px; margin-top: 12px; }
+
+    .notice {
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>管理ツール</h1>
+  <p class="subtitle">config.json・user.json を GUI で作成してダウンロードできます</p>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('user')">user.json</button>
+    <button class="tab-btn" onclick="switchTab('config')">config.json</button>
+  </div>
+
+  <!-- ============================================================
+       TAB: config.json
+       ============================================================ -->
+  <div class="tab-panel" id="tab-config">
+
+    <div class="notice">
+      ⚠️ 生成後、<code>config.json</code> をリポジトリのトップレベルに配置してください。
+    </div>
+
+    <div class="section">
+      <div class="section-title">サイト設定</div>
+      <div class="field">
+        <label>サイト名<span class="required">*</span></label>
+        <input type="text" id="cfg-site-name" placeholder="例: nisetter" oninput="updateConfigPreview()">
+      </div>
+      <div class="field">
+        <label>テーマ</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="cfg-theme" value="dark" checked onchange="updateConfigPreview()"> dark
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="cfg-theme" value="light" onchange="updateConfigPreview()"> light
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">baseDate — 投稿日時の基準点</div>
+      <div class="field">
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="cfg-basedate-mode" value="fixed" checked onchange="toggleBaseDateInput()"> fixed（固定日）
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="cfg-basedate-mode" value="relative" onchange="toggleBaseDateInput()"> relative（閲覧日）
+          </label>
+        </div>
+      </div>
+      <div class="field" id="fixed-date-field">
+        <label>基準日（ARG世界の「今日」）<span class="required">*</span></label>
+        <input type="date" id="cfg-fixed-date" oninput="updateConfigPreview()">
+      </div>
+      <div class="date-hint" id="cfg-date-hint">
+        <strong>fixed モード</strong>: すべての投稿日時はこの日付を「今」として相対表示されます。ARG世界の「現在日時」を設定してください。
+      </div>
+    </div>
+
+    <div style="display:flex; justify-content:flex-end; margin-bottom:16px;">
+      <button class="btn btn-primary" onclick="generateConfig()">▶ config.json を生成</button>
+    </div>
+
+    <div class="section output-section" id="config-output-section">
+      <div class="section-title">生成された config.json</div>
+      <div class="json-output" id="config-json-output"></div>
+      <div class="output-actions">
+        <button class="btn btn-primary btn-sm" onclick="downloadConfig()">⬇ ダウンロード</button>
+        <button class="btn btn-secondary btn-sm" onclick="copyConfig()">コピー</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TAB: user.json
+       ============================================================ -->
+  <div class="tab-panel active" id="tab-user">
+
+    <div class="notice">
+      ユーザーを追加する場合は <code>data/{userID}/</code> フォルダを作成し、<code>data/index.json</code> に userID を追加してください。
+    </div>
+
+    <!-- Basic info -->
+    <div class="section">
+      <div class="section-title">基本情報</div>
+      <div class="field">
+        <label>userID（フォルダ名・@の後ろ）<span class="required">*</span></label>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <input type="text" id="user-key" placeholder="例: alice" pattern="[a-zA-Z0-9_-]+" oninput="updateMediaLabel()" style="flex:1;">
+          <button class="btn btn-secondary btn-sm" onclick="loadUserData()" style="white-space:nowrap; flex-shrink:0;">データを読み込む</button>
+        </div>
+        <div id="load-user-msg" style="font-size:0.78rem; margin-top:5px;"></div>
+      </div>
+      <div class="field">
+        <label>表示名<span class="required">*</span></label>
+        <input type="text" id="display-name" placeholder="例: アリス">
+      </div>
+      <div class="field">
+        <label>プロフィール文</label>
+        <textarea id="bio" placeholder="自己紹介など" rows="2"></textarea>
+      </div>
+      <div style="font-size:0.78rem; color:var(--text-sub); margin-top:4px;">アイコン画像は <code>icon.png</code> という名前で <code>data/{userID}/</code> に配置してください。<code>sample/</code> 以下の画像をコピーして使うこともできます。</div>
+      <div class="row" style="margin-top:14px;">
+        <div class="field" style="position:relative;">
+          <label>フォロー中</label>
+          <div class="tag-input-wrap" id="following-wrap" onclick="this.querySelector('input').focus()">
+            <input class="tag-input" id="following-input" placeholder="キーまたは名前で検索…" autocomplete="off"
+              oninput="filterFollowCandidates('following')"
+              onfocus="filterFollowCandidates('following')"
+              onblur="hideFollowDropdown('following')"
+              onkeydown="handleTagInput(event,'following')">
+          </div>
+          <div id="following-dropdown" style="display:none; position:absolute; left:0; right:0; z-index:50; background:var(--bg-card); border:1px solid var(--border-focus); border-radius:6px; max-height:180px; overflow-y:auto;"></div>
+        </div>
+        <div class="field" style="position:relative;">
+          <label>フォロワー</label>
+          <div class="tag-input-wrap" id="followers-wrap" onclick="this.querySelector('input').focus()">
+            <input class="tag-input" id="followers-input" placeholder="キーまたは名前で検索…" autocomplete="off"
+              oninput="filterFollowCandidates('followers')"
+              onfocus="filterFollowCandidates('followers')"
+              onblur="hideFollowDropdown('followers')"
+              onkeydown="handleTagInput(event,'followers')">
+          </div>
+          <div id="followers-dropdown" style="display:none; position:absolute; left:0; right:0; z-index:50; background:var(--bg-card); border:1px solid var(--border-focus); border-radius:6px; max-height:180px; overflow-y:auto;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Posts -->
+    <div class="section">
+      <div class="section-title">投稿</div>
+
+      <div id="post-list"></div>
+
+      <div class="add-post-form">
+        <div class="field">
+          <label>投稿本文</label>
+          <textarea id="new-post-body" placeholder="投稿内容を入力…" rows="3"></textarea>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>日時（baseDate との関係で offset に変換されます）</label>
+            <input type="datetime-local" id="new-post-datetime">
+          </div>
+          <div class="field">
+            <label id="media-label">添付ファイル名（任意）</label>
+            <input type="text" id="new-post-media" placeholder="例: photo.jpg">
+          </div>
+          <div class="field" style="flex:0 0 auto; align-self:flex-end;">
+            <button class="btn btn-secondary btn-sm" onclick="addPost()">＋ 追加</button>
+          </div>
+        </div>
+        <div class="date-hint" id="post-date-hint"></div>
+        <div class="field" style="margin-top:12px; position:relative;">
+          <label>リプライ先（任意）</label>
+          <input type="text" id="reply-search" placeholder="投稿IDまたはキーワードで検索…" autocomplete="off" oninput="filterReplyCandidates()" onfocus="showReplyDropdown()" onblur="hideReplyDropdown()">
+          <div id="reply-dropdown" style="display:none; position:absolute; left:0; right:0; top:100%; z-index:50; background:var(--bg-card); border:1px solid var(--border-focus); border-radius:6px; max-height:200px; overflow-y:auto;"></div>
+          <div id="reply-selected" style="display:none; margin-top:6px; font-size:0.82rem; background:rgba(29,155,240,0.08); border:1px solid rgba(29,155,240,0.2); border-radius:6px; padding:6px 10px; display:flex; align-items:flex-start; justify-content:space-between; gap:8px;">
+            <span id="reply-selected-label" style="color:var(--accent); word-break:break-all;"></span>
+            <button onclick="clearReplyTo()" style="background:none;border:none;color:var(--text-sub);cursor:pointer;font-size:0.9rem;flex-shrink:0;padding:0;">✕</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Generate -->
+    <div style="display:flex; justify-content:flex-end; margin-bottom:16px;">
+      <button class="btn btn-primary" onclick="generateUser()">▶ user.json を生成</button>
+    </div>
+
+    <!-- Output -->
+    <div class="section output-section" id="user-output-section">
+      <div class="section-title">生成された user.json</div>
+      <div class="json-output" id="user-json-output"></div>
+      <div class="output-actions">
+        <button class="btn btn-primary btn-sm" onclick="downloadUser()">⬇ ダウンロード</button>
+        <button class="btn btn-secondary btn-sm" onclick="copyUser()">コピー</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// Tab switching
+// ============================================================
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+    btn.classList.toggle('active', ['user','config'][i] === name);
+  });
+  document.querySelectorAll('.tab-panel').forEach(panel => {
+    panel.classList.toggle('active', panel.id === `tab-${name}`);
+  });
+}
+
+// ============================================================
+// State
+// ============================================================
+const followState = { following: [], followers: [] };
+const posts = [];
+let loadedConfig = {};
+let baseDate = null;
+let postCounter = 0;
+let allExistingPosts = []; // { id, body, userKey } — loaded from data/
+let allExistingUsers = []; // { key, name } — loaded from data/index.json
+let selectedReplyTo = null; // { id, offset } or null
+
+// ============================================================
+// Init
+// ============================================================
+async function init() {
+  try {
+    const res = await fetch('config.json');
+    loadedConfig = await res.json();
+  } catch(e) {
+    loadedConfig = { siteName: '', theme: 'dark', baseDate: 'relative', lang: 'ja' };
+  }
+
+  // Pre-fill config tab with current values
+  document.getElementById('cfg-site-name').value = loadedConfig.siteName || '';
+  const theme = loadedConfig.theme || 'dark';
+  document.querySelector(`input[name="cfg-theme"][value="${theme}"]`).checked = true;
+  const bd = loadedConfig.baseDate || 'relative';
+  if (bd.startsWith('fixed:')) {
+    document.querySelector('input[name="cfg-basedate-mode"][value="fixed"]').checked = true;
+    document.getElementById('cfg-fixed-date').value = bd.slice(6);
+    baseDate = new Date(bd.slice(6) + 'T00:00:00');
+  } else {
+    document.querySelector('input[name="cfg-basedate-mode"][value="relative"]').checked = true;
+    document.getElementById('fixed-date-field').style.display = 'none';
+    baseDate = null;
+  }
+
+  updateConfigPreview();
+
+  // Set default datetime for post input
+  const defaultDt = new Date((baseDate || new Date()).getTime() - 86400000);
+  document.getElementById('new-post-datetime').value = toDatetimeLocal(defaultDt);
+  updatePostDateHint();
+
+  loadExistingPosts();
+}
+
+async function loadExistingPosts() {
+  try {
+    const idxRes = await fetch('data/index.json');
+    if (!idxRes.ok) return;
+    const index = await idxRes.json();
+    const results = await Promise.all(index.users.map(async key => {
+      try {
+        const res = await fetch(`data/${key}/user.json`);
+        if (!res.ok) return { posts: [], user: null };
+        const user = await res.json();
+        return {
+          posts: (user.posts || []).map(p => ({ id: p.id, body: p.body, offset: p.offset, userKey: key, userName: user.name })),
+          user: { key, name: user.name },
+        };
+      } catch { return { posts: [], user: null }; }
+    }));
+    allExistingPosts = results.flatMap(r => r.posts);
+    allExistingUsers = results.map(r => r.user).filter(Boolean);
+  } catch { /* data/ がない環境でも動作させる */ }
+}
+
+function toDatetimeLocal(d) {
+  const pad = n => String(n).padStart(2,'0');
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+
+// ============================================================
+// Config tab
+// ============================================================
+function toggleBaseDateInput() {
+  const mode = document.querySelector('input[name="cfg-basedate-mode"]:checked').value;
+  const field = document.getElementById('fixed-date-field');
+  const hint = document.getElementById('cfg-date-hint');
+  field.style.display = mode === 'fixed' ? '' : 'none';
+  if (mode === 'fixed') {
+    hint.innerHTML = '<strong>fixed モード</strong>: すべての投稿日時はこの日付を「今」として相対表示されます。ARG世界の「現在日時」を設定してください。';
+    const dateVal = document.getElementById('cfg-fixed-date').value;
+    baseDate = dateVal ? new Date(dateVal + 'T00:00:00') : null;
+  } else {
+    hint.innerHTML = '<strong>relative モード</strong>: baseDate は「閲覧した日」になります。投稿日時は閲覧時点からの相対時間として表示されます。';
+    baseDate = null;
+  }
+  updatePostDateHint();
+}
+
+function updateConfigPreview() {
+  // sync baseDate for user tab
+  const mode = document.querySelector('input[name="cfg-basedate-mode"]:checked').value;
+  if (mode === 'fixed') {
+    const dateVal = document.getElementById('cfg-fixed-date').value;
+    baseDate = dateVal ? new Date(dateVal + 'T00:00:00') : null;
+  } else {
+    baseDate = null;
+  }
+  updatePostDateHint();
+}
+
+function generateConfig() {
+  const siteName = document.getElementById('cfg-site-name').value.trim();
+  if (!siteName) { alert('サイト名を入力してください'); return; }
+
+  const theme = document.querySelector('input[name="cfg-theme"]:checked').value;
+  const mode = document.querySelector('input[name="cfg-basedate-mode"]:checked').value;
+
+  let baseDateVal;
+  if (mode === 'fixed') {
+    const dateVal = document.getElementById('cfg-fixed-date').value;
+    if (!dateVal) { alert('基準日を入力してください'); return; }
+    baseDateVal = `fixed:${dateVal}`;
+  } else {
+    baseDateVal = 'relative';
+  }
+
+  const cfg = { siteName, theme, baseDate: baseDateVal };
+  const json = JSON.stringify(cfg, null, 2);
+  document.getElementById('config-json-output').textContent = json;
+  document.getElementById('config-output-section').classList.add('visible');
+  document.getElementById('config-output-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function downloadConfig() {
+  const json = document.getElementById('config-json-output').textContent;
+  triggerDownload(json, 'config.json');
+}
+
+function copyConfig() {
+  copyToClipboard('config-json-output', event.target);
+}
+
+// ============================================================
+
+// ============================================================
+// Tag input (following / followers)
+// ============================================================
+let followDropdownTimers = {};
+
+function filterFollowCandidates(type) {
+  const input = document.getElementById(`${type}-input`);
+  const dd = document.getElementById(`${type}-dropdown`);
+  clearTimeout(followDropdownTimers[type]);
+
+  const q = input.value.trim().toLowerCase();
+  const currentKey = document.getElementById('user-key').value.trim();
+
+  const candidates = allExistingUsers.filter(u =>
+    u.key !== currentKey &&
+    !followState[type].includes(u.key) &&
+    (!q || u.key.toLowerCase().includes(q) || u.name.toLowerCase().includes(q))
+  );
+
+  if (candidates.length === 0) { dd.style.display = 'none'; return; }
+
+  dd.innerHTML = '';
+  for (const u of candidates.slice(0, 60)) {
+    const item = document.createElement('div');
+    item.style.cssText = 'padding:7px 12px; cursor:pointer; border-bottom:1px solid var(--border); font-size:0.85rem;';
+    item.innerHTML = `<span style="font-weight:600;">${escHtml(u.name)}</span> <span style="color:var(--text-sub); margin-left:4px;">@${escHtml(u.key)}</span>`;
+    item.onmousedown = () => addFollowTag(type, u.key);
+    item.onmouseover = () => item.style.background = 'var(--bg-hover)';
+    item.onmouseout = () => item.style.background = '';
+    dd.appendChild(item);
+  }
+  dd.style.display = 'block';
+}
+
+function hideFollowDropdown(type) {
+  followDropdownTimers[type] = setTimeout(() => {
+    document.getElementById(`${type}-dropdown`).style.display = 'none';
+  }, 200);
+}
+
+function addFollowTag(type, key) {
+  if (!followState[type].includes(key)) {
+    followState[type].push(key);
+    renderTags(type);
+  }
+  document.getElementById(`${type}-input`).value = '';
+  document.getElementById(`${type}-dropdown`).style.display = 'none';
+}
+
+function handleTagInput(e, type) {
+  if (e.key === 'Enter' || e.key === ',') {
+    e.preventDefault();
+    const input = e.target;
+    const val = input.value.trim().replace(/,/g, '');
+    if (val && !followState[type].includes(val)) {
+      followState[type].push(val);
+      renderTags(type);
+    }
+    input.value = '';
+    document.getElementById(`${type}-dropdown`).style.display = 'none';
+  } else if (e.key === 'Backspace' && e.target.value === '') {
+    followState[type].pop();
+    renderTags(type);
+  }
+}
+
+function renderTags(type) {
+  const wrap = document.getElementById(`${type}-wrap`);
+  const input = document.getElementById(`${type}-input`);
+  wrap.querySelectorAll('.tag').forEach(el => el.remove());
+  for (const key of followState[type]) {
+    const tag = document.createElement('div');
+    tag.className = 'tag';
+    tag.innerHTML = `<span>${key}</span><button onclick="removeTag('${type}','${key}')">×</button>`;
+    wrap.insertBefore(tag, input);
+  }
+}
+
+function removeTag(type, key) {
+  followState[type] = followState[type].filter(k => k !== key);
+  renderTags(type);
+}
+
+function updateMediaLabel() {
+  const key = document.getElementById('user-key').value.trim();
+  const label = document.getElementById('media-label');
+  label.textContent = key
+    ? `添付ファイル名（任意）— data/${key}/ に配置してください`
+    : '添付ファイル名（任意）';
+}
+
+// ============================================================
+// Posts
+// ============================================================
+function dateToOffset(dtStr) {
+  const dt = new Date(dtStr);
+  const ref = baseDate || new Date();
+  return Math.floor((dt - ref) / 1000);
+}
+
+function updatePostDateHint() {
+  const val = document.getElementById('new-post-datetime').value;
+  const hint = document.getElementById('post-date-hint');
+  if (!val) { hint.textContent = ''; return; }
+  const offset = dateToOffset(val);
+  const ref = baseDate ? baseDate.toLocaleDateString('ja-JP') : '閲覧時点';
+  const sign = offset < 0 ? '過去' : '未来';
+  hint.innerHTML = `<strong>${ref}</strong> から <strong>${Math.abs(offset)}</strong> 秒 ${sign}（offset: <strong>${offset}</strong>）`;
+}
+
+// ============================================================
+// Reply-to picker
+// ============================================================
+let replyDropdownHideTimer = null;
+
+function showReplyDropdown() {
+  clearTimeout(replyDropdownHideTimer);
+  filterReplyCandidates();
+}
+
+function hideReplyDropdown() {
+  replyDropdownHideTimer = setTimeout(() => {
+    document.getElementById('reply-dropdown').style.display = 'none';
+  }, 200);
+}
+
+function filterReplyCandidates() {
+  const q = document.getElementById('reply-search').value.trim().toLowerCase();
+  const dd = document.getElementById('reply-dropdown');
+
+  // 自分がこのセッションで追加した投稿も候補に含める
+  const currentKey = document.getElementById('user-key').value.trim();
+  const sessionPosts = posts.map(p => ({
+    id: p.id.startsWith('__new_') ? `${currentKey || '?'}_${p.id.slice(7)}` : p.id,
+    _origId: p.id,
+    body: p.body,
+    offset: p.offset,
+    userKey: currentKey || '(このユーザー)',
+    userName: document.getElementById('display-name').value.trim() || '',
+  }));
+
+  const pool = [...sessionPosts, ...allExistingPosts];
+  const filtered = q
+    ? pool.filter(p => p.id.toLowerCase().includes(q) || p.body.toLowerCase().includes(q) || p.userKey.toLowerCase().includes(q))
+    : pool.slice(0, 50);
+
+  if (filtered.length === 0) {
+    dd.style.display = 'none';
+    return;
+  }
+
+  dd.innerHTML = '';
+  for (const p of filtered.slice(0, 80)) {
+    const item = document.createElement('div');
+    item.style.cssText = 'padding:8px 12px; cursor:pointer; border-bottom:1px solid var(--border); font-size:0.82rem;';
+    item.innerHTML = `<span style="color:var(--accent);">@${escHtml(p.userKey)}</span> <span style="color:var(--text-sub); margin-left:4px;">${escHtml(p.id)}</span><div style="color:var(--text); margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${escHtml(p.body.slice(0, 60))}${p.body.length > 60 ? '…' : ''}</div>`;
+    item.onmousedown = () => selectReplyTo(p);
+    item.onmouseover = () => item.style.background = 'var(--bg-hover)';
+    item.onmouseout = () => item.style.background = '';
+    dd.appendChild(item);
+  }
+  dd.style.display = 'block';
+}
+
+function selectReplyTo(p) {
+  const isSession = !!p._origId;
+  const replyId = isSession ? `__session_${p._origId}` : p.id;
+
+  selectedReplyTo = { id: replyId, offset: p.offset };
+
+  document.getElementById('reply-search').value = '';
+  document.getElementById('reply-dropdown').style.display = 'none';
+
+  const sel = document.getElementById('reply-selected');
+  sel.style.display = 'flex';
+  document.getElementById('reply-selected-label').textContent = `↩ ${p.id}  「${p.body.slice(0, 40)}${p.body.length > 40 ? '…' : ''}」`;
+}
+
+function clearReplyTo() {
+  selectedReplyTo = null;
+  document.getElementById('reply-search').value = '';
+  document.getElementById('reply-selected').style.display = 'none';
+  document.getElementById('reply-selected-label').textContent = '';
+}
+
+function addPost() {
+  const body = document.getElementById('new-post-body').value.trim();
+  const dtVal = document.getElementById('new-post-datetime').value;
+  const media = document.getElementById('new-post-media').value || null;
+  if (!body) { alert('投稿本文を入力してください'); return; }
+  if (!dtVal) { alert('日時を入力してください'); return; }
+
+  const offset = dateToOffset(dtVal);
+
+  // 未来日チェック
+  if (offset > 0) {
+    alert('投稿日時は baseDate より過去である必要があります。');
+    return;
+  }
+
+  // リプライ先より後チェック
+  if (selectedReplyTo && offset <= selectedReplyTo.offset) {
+    alert('投稿日時はリプライ先の投稿より後である必要があります。');
+    return;
+  }
+
+  const id = `__new_${String(postCounter++).padStart(4,'0')}`;
+  const replyTo = selectedReplyTo ? selectedReplyTo.id : null;
+  posts.push({ id, body, datetime: dtVal, offset, media, replyTo });
+  posts.sort((a, b) => a.offset - b.offset);
+
+  document.getElementById('new-post-body').value = '';
+  document.getElementById('new-post-media').value = '';
+  clearReplyTo();
+  renderPosts();
+}
+
+function removePost(id) {
+  const idx = posts.findIndex(p => p.id === id);
+  if (idx !== -1) posts.splice(idx, 1);
+  renderPosts();
+}
+
+function renderPosts() {
+  const list = document.getElementById('post-list');
+  list.innerHTML = '';
+  if (posts.length === 0) {
+    list.innerHTML = '<div style="color:var(--text-sub);font-size:0.85rem;padding:8px 0;">投稿はまだありません</div>';
+    return;
+  }
+  for (const p of [...posts].reverse()) {
+    const el = document.createElement('div');
+    el.className = 'post-item';
+    el.innerHTML = `
+      <div class="post-item-header">
+        <div class="post-item-body">${escHtml(p.body)}</div>
+        <button class="post-item-delete" onclick="removePost('${p.id}')">✕</button>
+      </div>
+      <div class="post-item-meta">${escHtml(new Date(p.datetime).toLocaleString('ja-JP'))} &nbsp;|&nbsp; offset: ${p.offset}${p.media ? ` &nbsp;|&nbsp; 📎 ${escHtml(p.media)}` : ''}${p.replyTo ? ` &nbsp;|&nbsp; ↩ ${escHtml(p.replyTo)}` : ''}</div>
+    `;
+    list.appendChild(el);
+  }
+}
+
+// ============================================================
+// Load existing user.json
+// ============================================================
+async function loadUserData() {
+  const key = document.getElementById('user-key').value.trim();
+  const msg = document.getElementById('load-user-msg');
+  if (!key) { msg.style.color = 'var(--danger)'; msg.textContent = 'userID を入力してください'; return; }
+
+  msg.style.color = 'var(--text-sub)';
+  msg.textContent = '読み込み中…';
+
+  // ディレクトリ存在確認: index.json のユーザー一覧と照合
+  const userExists = allExistingUsers.some(u => u.key === key);
+  if (!userExists) {
+    msg.style.color = 'var(--danger)';
+    msg.textContent = `data/${key}/ が見つかりません`;
+    return;
+  }
+
+  let user;
+  try {
+    const res = await fetch(`data/${key}/user.json`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    user = await res.json();
+  } catch {
+    msg.style.color = 'var(--accent)';
+    msg.textContent = `※ 新規作成です（data/${key}/ は存在しますが user.json がありません）`;
+    return;
+  }
+
+  // 基本情報
+  document.getElementById('display-name').value = user.name || '';
+  document.getElementById('bio').value = user.bio || '';
+
+  // フォロー / フォロワー
+  followState.following = [...(user.following || [])];
+  followState.followers = [...(user.followers || [])];
+  renderTags('following');
+  renderTags('followers');
+
+  // 投稿
+  posts.length = 0;
+  postCounter = 0;
+  const ref = baseDate || new Date();
+  for (const p of (user.posts || [])) {
+    const dt = new Date(ref.getTime() + p.offset * 1000);
+    posts.push({
+      id: p.id,
+      body: p.body,
+      datetime: toDatetimeLocal(dt),
+      offset: p.offset,
+      media: p.media || null,
+      replyTo: p.replyTo || null,
+    });
+    postCounter++;
+  }
+  posts.sort((a, b) => a.offset - b.offset);
+
+
+  renderPosts();
+
+  msg.style.color = 'var(--success)';
+  msg.textContent = `読み込み完了（投稿 ${posts.length} 件）`;
+  updateMediaLabel();
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ============================================================
+// Generate user.json
+// ============================================================
+function generateUser() {
+  const key = document.getElementById('user-key').value.trim();
+  const name = document.getElementById('display-name').value.trim();
+  const bio = document.getElementById('bio').value.trim();
+
+  if (!key) { alert('userID を入力してください'); return; }
+  if (!name) { alert('表示名を入力してください'); return; }
+
+  // まず確定IDマップを作る（セッション内投稿の __new_ → key_NNNN）
+  const idMap = {};
+  posts.forEach((p, i) => { idMap[p.id] = `${key}_${String(i).padStart(4,'0')}`; });
+
+  const finalPosts = posts.map((p, i) => {
+    let replyTo = p.replyTo || null;
+    if (replyTo && replyTo.startsWith('__session___new_')) {
+      // セッション内投稿へのリプライ → 確定IDに変換
+      const origId = replyTo.slice('__session_'.length);
+      replyTo = idMap[origId] || null;
+    }
+    return {
+      id: `${key}_${String(i).padStart(4,'0')}`,
+      body: p.body,
+      offset: p.offset,
+      replyTo,
+      media: p.media || null,
+    };
+  });
+
+  const user = {
+    key,
+    name,
+    bio,
+    createdOffset: finalPosts.length > 0 ? finalPosts[0].offset - 86400 : -2592000,
+    following: [...followState.following],
+    followers: [...followState.followers],
+    posts: finalPosts,
+  };
+
+  const json = JSON.stringify(user, null, 2);
+  document.getElementById('user-json-output').textContent = json;
+  document.getElementById('user-output-section').classList.add('visible');
+  document.getElementById('user-output-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function downloadUser() {
+  const json = document.getElementById('user-json-output').textContent;
+  triggerDownload(json, 'user.json');
+}
+
+function copyUser() {
+  copyToClipboard('user-json-output', event.target);
+}
+
+// ============================================================
+// Shared utilities
+// ============================================================
+function triggerDownload(json, filename) {
+  const blob = new Blob([json], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function copyToClipboard(elementId, btn) {
+  const json = document.getElementById(elementId).textContent;
+  navigator.clipboard.writeText(json).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ コピーしました';
+    setTimeout(() => btn.textContent = orig, 1500);
+  });
+}
+
+// ============================================================
+// Boot
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('new-post-datetime').addEventListener('input', updatePostDateHint);
+  document.getElementById('cfg-fixed-date').addEventListener('input', updateConfigPreview);
+});
+
+init().then(renderPosts);
+</script>
+</body>
+</html>
